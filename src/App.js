@@ -43,7 +43,7 @@ function App(props) {
         ]
     }
     return (
-        <div className="sliser-container">
+        <div className="slider-container">
             <Slider {...settings} className='slider'>
                 {images.map(
                     (image, index) => (
