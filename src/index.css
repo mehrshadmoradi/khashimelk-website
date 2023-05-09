@@ -1,0 +1,53 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+
+
+.slider {
+  background-color: rgb(216, 225, 216);
+  border-radius: 6px;
+  height: 210px;
+  max-width: 900px;
+  border: 6px outset #0fdca5a4;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 70px;
+  box-shadow: 10px 10px 30px #4f4e4e;
+
+}
+
+.innerDiv-carousel {
+  border-radius: 8px;
+}
+
+.list {
+  list-style: none;
+}
+
+.figure {
+  margin: 25px;
+  transition: all 0.3s ease;
+}
+
+.figure:hover {
+  transform: scale(1.2);
+  filter: brightness(70%);
+}
+
+figure>a {
+  color: black;
+  text-decoration: none;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.image {
+  border-radius: 6px;
+  border: 2px outset rgb(136, 190, 28);
+}
+
+
+
+.figCaption {
+  align-items: center;
+}

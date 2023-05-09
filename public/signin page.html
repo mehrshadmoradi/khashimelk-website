@@ -1,0 +1,210 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin page</title>
+    <script src="https://kit.fontawesome.com/8ff4ac4612.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="signIn.css">
+</head>
+
+
+
+
+<body>
+  
+    <div class="singin-form" id="signin-div">
+        <fieldset class="fieldset1">
+            <legend>sign in information</legend>
+            <form id="form1" onsubmit="formValidation()">
+                <div class="signin">
+                    <div class="signin-container">
+                        <label for="singin-username">UserName:</label><br>
+                        <input class="input-size" type="text" name="singin-username" id="username">
+                    </div>
+                    <div class="signin-container">
+                        <label for="email">email:</label><br>
+                        <input class="input-size email" type="email" name="email" id="email">
+                    </div>
+                    <div class="signin-container">
+                        <label for="password1">password:</label><br>
+                        <input class="input-size" id="paswrd1" type="password"  name="password1" required>
+                        <i class="fa-solid fa-eye" id="eye1" onclick="visiblityBtn1()" aria-hidden="true"></i>
+                    </div>
+                    <div class="signin-container">
+                        <label for="password2">confirm password:</label><br>
+                        <input class="input-size" id="paswrd2" type="password" name="password2"  required>
+                        <i class="fa-solid fa-eye" id="eye2" onclick="visiblityBtn2()" aria-hidden="true"></i>
+                    </div>
+                    <div class="signin-container">
+                        <input type="checkbox" class="checkbox" id="remember1" >
+                    <label for="remember1" style="font-family:cursive;font-size: 15px;font-weight: bold;">remember me</label>
+                    </div>
+                    <div class="signin-container">
+                        <button class="submit" id="submit" type="submit">submit</button>
+                    </div>
+                </div>
+             </form>
+        </fieldset>
+    </div>
+
+    <div class="login-form" id="login-div">
+        <fieldset class="fieldset2">
+            <legend>log in information</legend>
+            <form>
+                <div class="login-container">
+                    <label for="login-username">UserName:</label>
+                    <input type="text" class="login-inputs" name="login-username">
+                </div>
+                <div class="login-container">
+                    <label for="login-password">password:</label>
+                    <input type="password" class="login-inputs" id="login-paswrd" name="login-password">
+                    <i class="fa-solid fa-eye" id="login-eye" onclick="loginpaswrdvisiblity()" aria-hidden="true"></i>
+                </div>
+
+                <div class="login-container">
+                    <input type="checkbox" class="checkbox" id="remember2" >
+                    <label for="remember2" style="font-family:cursive;font-size: 15px;font-weight: bold;">remember me</label>
+                </div>
+
+                <div class="login-container">
+                    <a href="" class="forgotpaswrd">forgot password?</a>
+                </div>
+
+
+
+                <div class="login-container">
+                    <button class="submit login-submit" id="login-submit" type="submit" >submit</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+
+    <div class="backbtndiv">
+        <button type="button" class="backbtn" id="back-btn" onclick="backtosignindiv()">back</button>
+    </div>
+
+
+
+
+    <div class="asklogindiv" id="asklogin-div">
+        <div class="askloginitem">Do you have an account?</div>
+        <button type="button" class="askloginitem loginbtn" onclick="logindivvisiblity()" aria-hidden="true">log in</button>
+    </div>
+
+    
+
+    <script>
+      //visiblity toggle for first password input 
+      const firstEyeToggle = document.getElementById("eye1");
+      const firstpasswordinput = document.getElementById("paswrd1");
+      
+      function visiblityBtn1(){
+          if(firstpasswordinput.type ==="password"){
+              firstpasswordinput.type = "text";
+              firstEyeToggle.setAttribute("class","fa-solid fa-eye-slash");
+              }
+          else{
+            firstpasswordinput.type = "password";
+            firstEyeToggle.setAttribute("class","fa-solid fa-eye");
+              }
+      }
+
+
+      //visiblity toggle for second password input 
+      const secondEyeToggle = document.getElementById("eye2");
+      const secondPasswordInput = document.getElementById("paswrd2");
+
+      function visiblityBtn2(){
+          if (secondPasswordInput.type === "password"){
+            secondPasswordInput.type = "text";
+            secondEyeToggle.setAttribute("class","fa-solid fa-eye-slash");
+          }
+          else {
+              secondPasswordInput.type = "password";
+              secondEyeToggle.setAttribute("class","fa-solid fa-eye");
+          }
+      }
+
+
+
+
+      // login div 
+
+
+
+
+
+      //paswrd visiblity toggle
+      const loginEyeToggle = document.getElementById("login-eye");
+      const loginPaswrdInput = document.getElementById("login-paswrd");
+      function loginpaswrdvisiblity(){
+        if(loginPaswrdInput.type === "password"){
+            loginPaswrdInput.type = "text";
+            loginEyeToggle.setAttribute("class","fa-solid fa-eye-slash");
+        }
+        else{
+            loginPaswrdInput.type = "password";
+            loginEyeToggle.setAttribute("class","fa-solid fa-eye");
+        }
+      };
+
+
+
+      const signinDiv = document.getElementById("signin-div");
+      const loginDiv = document.getElementById("login-div");
+      const askLoginDiv = document.getElementById("asklogin-div");
+      const backBtn = document.getElementById("back-btn");
+
+      function logindivvisiblity(){
+          signinDiv.style.display = "none";
+          askLoginDiv.style.display = "none";
+          loginDiv.style.display = "block";
+          backBtn.style.display = "block";
+
+      };
+
+      // back to signin div from login div
+
+      function backtosignindiv(){
+          loginDiv.style.display = "none";
+          backBtn.style.display = "none";
+          signinDiv.style.display = "block";
+          askLoginDiv.style.display = "block";
+           
+      }
+
+      function formValidation(e) {
+        
+        const form1 = document.getElementById("form1")
+        const userNameValue = form1["username"].value;
+        const emailValue = form1["email"].value;
+        const password1 = form1["paswrd1"].value;
+        const password2 = form1["paswrd2"].value;
+        const alertText = "Hi dear "+userNameValue+" .\n"+
+            "welcome to khashimelk .\n" + 
+            "your email is : " + emailValue + " .\n" +
+            "your password is : " + password1 + " .\n"+
+            "\n"+
+            "your registration is done successfully ." ;
+        
+
+        if(userNameValue =="") {
+            alert("UserName must be filled out");
+        };
+        if (emailValue=="") {
+            alert("email must be filled out")
+        };
+
+        if(password1!==password2) {
+            alert("password did not matched")
+        };
+
+        if (userNameValue !=="" && emailValue !=="" && password1===password2) {
+            alert(alertText);
+        };
+      }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
+
+
+div {
+  margin: auto;
+}
+
+.img {
+
+  width: 200px;
+  height: 200px;
+}
